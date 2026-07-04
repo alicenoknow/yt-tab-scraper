@@ -1,4 +1,4 @@
-# tab-scraper
+# yt-tab-scraper
 
 Turn any YouTube guitar-tab video into a clean, printable PDF.
 
