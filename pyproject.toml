@@ -1,0 +1,12 @@
+[project]
+name = "tab-scraper"
+version = "0.1.0"
+description = "YouTube tab-overlay video -> PDF of tab strips"
+requires-python = ">=3.10"
+dependencies = ["yt-dlp", "pillow", "numpy"]
+
+[project.scripts]
+tab-scraper = "tab_scraper.cli:main"
+
+[tool.setuptools]
+packages = ["tab_scraper"]
