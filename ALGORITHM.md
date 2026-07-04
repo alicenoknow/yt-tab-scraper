@@ -86,7 +86,7 @@ Goal: collapse ~150 frames into ~15 unique strips, preserving play order and kee
 
 ### 4.1 Difference hash
 
-Resize crop to 33×8, compare each pixel to its left neighbor → 256-bit hash encoding horizontal structure. Immune to brightness/contrast flicker. Distance = fraction of differing bits.
+Resize crop to 33×8, compare each pixel to its left neighbor → 256-bit hash encoding horizontal structure. Immune to brightness/contrast flicker. Distance = **column-wise median** of per-column bit-flip fractions (not the mean over all bits). A playback cursor (narrow blue vertical band) flips most bits in 2–3 columns out of 32; the median ignores those outlier columns, so same-content frames with different cursor positions hash as identical.
 
 Measured: same strip ≤ 0.04, different strips ≥ 0.15. Default threshold 0.06.
 

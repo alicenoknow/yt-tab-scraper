@@ -29,7 +29,9 @@ def dedup(frame_paths: list[Path], crop: tuple[int, int, int, int],
     prev = None
     for p in frame_paths:
         cur = dhash(Image.open(p).crop(core))
-        if prev is not None and (cur ^ prev).mean() <= threshold:
+        # column-wise median: a playback cursor (narrow vertical band) flips bits
+        # in 2-3 columns out of 32; median ignores those outliers
+        if prev is not None and float(np.median((cur ^ prev).mean(axis=0))) <= threshold:
             runs[-1].append(p)
         else:
             runs.append([p])
