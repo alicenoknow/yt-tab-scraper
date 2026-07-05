@@ -2,7 +2,7 @@
 
 Turn any YouTube guitar-tab video into a clean, printable PDF.
 
-Works with tab-only videos, notation + tab panels. No manual cropping needed — the tool finds the six
+Works with tab-only videos, notation + tab panels. No manual cropping needed - the tool finds the six
 evenly spaced lines that make tab *tab* and tracks them automatically.
 
 <img src="./tab-scraper-preview.webp" />
